@@ -618,9 +618,15 @@ function openImage(src){
 </html>
 `;
 
-fs.writeFileSync('qa-report.html', html);
+// NOTE: generateReport.js is reused by multiple pipelines.
+// For Sitemap pipeline we want a distinct output filename.
+const outputName = process.env.SITEMAP_OUTPUT_HTML === '1'
+  ? 'reportsitemap.html'
+  : 'qa-report.html';
 
-console.log('✅ QA report generated');
+fs.writeFileSync(outputName, html);
+
+console.log(`✅ QA report generated: ${outputName}`);
 
 const { exec } = require('child_process');
 

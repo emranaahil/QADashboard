@@ -39,6 +39,24 @@ const steps = [
   { text: "Generating report...", progress: 90 }
 ]
 
+const seoSteps = [
+  { text: "Starting SEO Testing...", progress: 5 },
+  { text: "Validating URL...", progress: 15 },
+  { text: "Detecting sitemap...", progress: 25 },
+  { text: "Extracting URLs...", progress: 35 },
+  { text: "Launching browser...", progress: 45 },
+  { text: "Scanning pages...", progress: 55 },
+  { text: "Running SEO checks...", progress: 65 },
+  { text: "Analyzing metadata...", progress: 70 },
+  { text: "Checking headings...", progress: 75 },
+  { text: "Checking image alt...", progress: 78 },
+  { text: "Checking bad links...", progress: 80 },
+  { text: "Performing cross-page validation...", progress: 85 },
+  { text: "Calculating SEO score...", progress: 88 },
+  { text: "Generating report...", progress: 95 }
+]
+
+
 const toastTheme = {
   success: { icon: FiCheckCircle, cls: "toast-success" },
   error: { icon: FiXCircle, cls: "toast-error" },
@@ -175,10 +193,12 @@ function App() {
     setLiveLogs([`Starting ${moduleTitle}...`])
     addToast("info", "Test started...")
 
+    const activeSteps = activeTab === "seo" ? seoSteps : steps
+
     let stepIndex = 0
     stepsIntervalRef.current = setInterval(() => {
-      if (stepIndex < steps.length) {
-        const step = steps[stepIndex]
+      if (stepIndex < activeSteps.length) {
+        const step = activeSteps[stepIndex]
         setLiveLogs((prev) => [...prev, step.text])
         setProgress(step.progress)
         progressRef.current = step.progress
@@ -511,7 +531,17 @@ function App() {
                           </div>
                           <p><strong>Test:</strong> {item.testUrl}</p>
                           {item.referenceUrl && <p><strong>Reference:</strong> {item.referenceUrl}</p>}
-                          <a href={`http://localhost:5000/${item.pdfPath}`} target="_blank" rel="noreferrer">Open PDF Report</a>
+                          <a
+                            href={`http://localhost:5000/${item.reportPath || item.pdfPath || ""}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => {
+                              if (!item.reportPath && !item.pdfPath) e.preventDefault()
+                            }}
+                          >
+                            Open Report
+                          </a>
+
                         </article>
                       ))}
                   </div>

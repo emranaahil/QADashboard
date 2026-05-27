@@ -376,6 +376,36 @@ function generateHtmlReport({ mainUrl, scanDate, pages }) {
   const totalHidden = pages.reduce((acc, p) => acc + (p.issues.hidden?.length || 0), 0);
   const averageScore = totalPages ? pages.reduce((a, p) => a + (p.seoScore || 0), 0) / totalPages : 0;
 
+  const formatHierarchyShort = (s) => {
+    const v = (s || '').toString();
+    return v.startsWith('YES') ? 'YES' : 'NO';
+  };
+
+  const toIssueBullets = (issueList) => {
+    if (!issueList || !issueList.length) return [{ text: '• None' }];
+    return issueList.map((x) => {
+      const t = (x || '').toString();
+
+      // Normalize "Bad links: javascript:void(0): Found 1 ..."
+      // into bullets: "• javascript:void(0): 1" etc.
+      const mJsVoid = t.match(/Bad links:\s*javascript:void\(0\):\s*Found\s*(\d+)\s+javascript:void\(0\)\s+link\(s\)/i);
+      if (mJsVoid) return { text: `• javascript:void(0): ${mJsVoid[1]}` };
+
+      const mHrefHash = t.match(/Bad links:\s*href="#":\s*Found\s*(\d+)\s+href="#"\s+link\(s\)/i);
+      if (mHrefHash) return { text: `• href="#": ${mHrefHash[1]}` };
+
+      // Current UI sometimes stores like: "Bad links: javascript:void(0): 12 🔴"
+      const mJsVoid2 = t.match(/Bad links:\s*javascript:void\(0\):\s*(\d+)/i);
+      if (mJsVoid2 && !mJsVoid) return { text: `• javascript:void(0): ${mJsVoid2[1]}` };
+
+      const mHrefHash2 = t.match(/Bad links:\s*href="#":\s*(\d+)/i);
+      if (mHrefHash2 && !mHrefHash) return { text: `• href="#": ${mHrefHash2[1]}` };
+
+      return { text: `• ${t}` };
+    });
+  };
+
+
   const rows = pages
     .map((p) => {
       const criticalLen = p.issues.critical?.length || 0;
@@ -395,7 +425,7 @@ function generateHtmlReport({ mainUrl, scanDate, pages }) {
         <td>${escapeHtml(p.title || '')}</td>
         <td>${p.h1Count}</td>
         <td>${escapeHtml(p.hierarchyStatus || '')}</td>
-        <td>${escapeHtml(issuesCell || '—')}</td>
+        <td>${escapeHtml(issuesCell || '—None-')}</td>
         <td>${p.counts?.hrefHash || 0}</td>
         <td>${p.counts?.jsVoid || 0}</td>
         <td>${p.counts?.missingAlt || 0}</td>
@@ -427,11 +457,11 @@ function generateHtmlReport({ mainUrl, scanDate, pages }) {
             <summary>🔴 Critical Issues (${(p.issues.critical || []).length})</summary>
             <ul>${criticalList}</ul>
           </details>
-          <details>
+          <details open>
             <summary>🟡 Minor Issues (${(p.issues.minor || []).length})</summary>
             <ul>${minorList}</ul>
           </details>
-          <details>
+          <details open>
             <summary>🔵 Hidden Issues (${(p.issues.hidden || []).length})</summary>
             <ul>${hiddenList}</ul>
           </details>
@@ -495,11 +525,32 @@ function generateHtmlReport({ mainUrl, scanDate, pages }) {
     </header>
 
     <div class="summary">
-      <div class="stat"><div class="k">Total Pages</div><div class="v">${totalPages}</div></div>
-      <div class="stat"><div class="k">Total Critical Issues 🔴</div><div class="v" style="color:var(--critical)">${pages.reduce((a,p)=>a+(p.issues.critical?.length||0),0)}</div></div>
-      <div class="stat"><div class="k">Total Minor Issues 🟡</div><div class="v" style="color:var(--minor)">${pages.reduce((a,p)=>a+(p.issues.minor?.length||0),0)}</div></div>
-      <div class="stat"><div class="k">Total Hidden Issues 🔵</div><div class="v">${pages.reduce((a,p)=>a+(p.issues.hidden?.length||0),0)}</div></div>
-    </div>
+  <div class="stat">
+    <span class="k">Total Pages :</span>
+    <span class="v">${totalPages}</span>
+  </div>
+
+  <div class="stat">
+    <span class="k">🔴 Total Critical Issues :</span>
+    <span class="v" style="color:var(--critical)">
+      ${pages.reduce((a,p)=>a+(p.issues.critical?.length||0),0)}
+    </span>
+  </div>
+
+  <div class="stat">
+    <span class="k">🟡 Total Minor Issues :</span>
+    <span class="v" style="color:var(--minor)">
+      ${pages.reduce((a,p)=>a+(p.issues.minor?.length||0),0)}
+    </span>
+  </div>
+
+  <div class="stat">
+    <span class="k">🔵 Total Hidden Issues :</span>
+    <span class="v">
+      ${pages.reduce((a,p)=>a+(p.issues.hidden?.length||0),0)}
+    </span>
+  </div>
+</div>
 
     <table>
       <thead>
@@ -526,6 +577,64 @@ function generateHtmlReport({ mainUrl, scanDate, pages }) {
 </html>`;
 }
 
+function isSitemapUrl(url, contentType) {
+  const u = (url || '').toLowerCase();
+  const ct = (contentType || '').toLowerCase();
+  return u.endsWith('.xml') || u.includes('sitemap') || ct.includes('xml');
+}
+
+async function extractUrlsFromSitemap(url, visited = new Set(), depth = 0) {
+  const MAX_DEPTH = 3;
+  const MAX_URLS = 50;
+
+  if (!url) return [];
+  if (visited.has(url)) return [];
+  if (depth > MAX_DEPTH) return [];
+
+  visited.add(url);
+
+  console.log('🔎 Processing sitemap:', url);
+
+  let res;
+  try {
+    res = await fetch(url, {
+      headers: { 'user-agent': 'seo-audit-playwright/1.0 (+node)' }
+    });
+  } catch {
+    return [];
+  }
+
+  const contentType = res.headers.get('content-type') || '';
+  const xmlText = await res.text().catch(() => '');
+
+  const locs = extractLocsFromXml(xmlText);
+  console.log('📄 Found URLs:', locs.length);
+
+  const final = [];
+
+  for (const loc of locs) {
+    if (final.length >= MAX_URLS) break;
+
+    const cleaned = stripHashAndQuery(loc);
+    if (!cleaned) continue;
+
+    if (isSitemapUrl(cleaned, contentType)) {
+      console.log('🔁 Nested sitemap detected:', cleaned);
+      const nested = await extractUrlsFromSitemap(cleaned, visited, depth + 1);
+      for (const n of nested) {
+        if (final.length >= MAX_URLS) break;
+        final.push(n);
+      }
+    } else {
+      final.push(cleaned);
+    }
+  }
+
+  const deduped = Array.from(new Set(final));
+  console.log('✅ Final page URLs:', deduped.length);
+  return deduped;
+}
+
 async function detectSitemapUrls(mainUrl) {
   const sitemap1 = `${mainUrl}/sitemap.xml`;
   const sitemap2 = `${mainUrl}/sitemap_index.xml`;
@@ -548,11 +657,13 @@ async function runSeoAudit({ mainUrl }) {
   log('🔎 Detecting sitemap...');
   const sitemap = await detectSitemapUrls(baseUrl);
   if (sitemap.found) {
-    const locs = extractLocsFromXml(sitemap.xmlText);
-    const cleaned = uniq(locs.map((u) => stripHashAndQuery(u))).filter((u) => u.startsWith(baseUrl));
-
     const max = 50;
     const min = 20;
+
+    // New: recursively extract page URLs from nested sitemaps.
+    const extractedPages = await extractUrlsFromSitemap(sitemap.sitemapUrl, new Set(), 0);
+    const cleaned = uniq(extractedPages.map((u) => stripHashAndQuery(u))).filter((u) => u.startsWith(baseUrl));
+
     const limited = cleaned.length ? cleaned.slice(0, Math.min(max, cleaned.length)) : [baseUrl];
     urls = limited.length < min ? cleaned : limited;
     if (!urls.length) urls = [baseUrl];
@@ -562,6 +673,7 @@ async function runSeoAudit({ mainUrl }) {
   } else {
     log('⚠️ Sitemap not found; scanning main URL only');
   }
+
 
   const concurrency = 4;
   const timeoutMs = 15000;
@@ -677,5 +789,8 @@ async function runSeoAudit({ mainUrl }) {
 module.exports = {
   runSeoAudit,
   generateHtmlReport
+  
+  
 };
+
 

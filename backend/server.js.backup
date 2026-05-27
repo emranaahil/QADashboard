@@ -36,13 +36,8 @@ app.use(
 app.post("/run-ui-test", async (req, res) => {
   
     const { testUrl, referenceUrl, type } = req.body;
-
-    console.log("==== REQUEST START ====");
-    console.log("TYPE RECEIVED:", type);
-    console.log("TEST URL:", testUrl);
-
+  
     console.log("TYPE:", type); // 👈 debug this first
-
 
   // ✅ STEP 1: ADD HERE (just after req.body)
   
@@ -87,9 +82,7 @@ switch (type) {
     break
 
   case "seo":
-    // IMPORTANT: runseo.js + uiseocheck.js live at repo root (not inside backstopproject)
-    const absoluteSeoPath = path.join(__dirname, "..", "runseo.js")
-    args = [absoluteSeoPath, testUrl]
+    args = ["runSeo.js", testUrl]
     break
 
   case "sitemap":
@@ -101,10 +94,6 @@ switch (type) {
       message: "Invalid test type"
     })
 }
-console.log("Starting script for type:", type);
-if (type === "seo") {
-  console.log("Executing SEO script at:", args[0]);
-}
 const child = spawn("node", args, {
   cwd: backstopProjectPath
 })
@@ -115,7 +104,7 @@ const child = spawn("node", args, {
       child.stdout.on("data", (data) => {
         const msg = data.toString()
         logs += msg
-        console.log("SCRIPT STDOUT:", msg)
+        console.log(msg)
         io.emit("live-log", msg)
       })
       
@@ -123,25 +112,12 @@ const child = spawn("node", args, {
       child.stderr.on("data", (data) => {
         const msg = data.toString()
         logs += msg
-        console.log("SCRIPT STDERR:", msg)
+        console.log(msg)
         io.emit("live-log", msg)
       })
       
       // ✅ WHEN PROCESS ENDS
-      child.on("close", async (code) => {
-        console.log("Script finished with code:", code)
-
-        if (code !== 0) {
-          console.log("Script failed; stopping. code:", code)
-          return res.status(500).json({
-            success: false,
-            status: "execution_failed",
-            logs
-          })
-        }
-
-        console.log("Reached post-script logic");
-
+      child.on("close", async () => {
         let status = "passed"
         let isExecutionFailed = false
         
@@ -178,8 +154,6 @@ const child = spawn("node", args, {
 
         const failMatch = logs.match(/(\d+)\s+Failed/)
 
-        console.log("Checking type condition:", type)
-
         console.log("FINAL STATUS:", isExecutionFailed ? "execution_failed" : status)
 
         if (failMatch && parseInt(failMatch[1]) > 0) {
@@ -204,114 +178,35 @@ const child = spawn("node", args, {
       
           fs.ensureDirSync(reportDestination)
       
-          const historyFilePath = path.join(
-            __dirname,
-            "../backstopproject/reports/history.json"
-          )
-
-          const reportFile =
-            type === "seo"
-              ? "reportseo.html"
-              : type === "sitemap"
-                ? "reportsitemap.html"
-                : "qa-report.html"
-
-          console.log("Test type:", type)
-          console.log("Using report file:", reportFile)
-
-          const pdfGenerationSkipped = type === "seo" || type === "sitemap"
-          console.log("PDF generation skipped:", pdfGenerationSkipped)
-
-          // strict mapping: never use qa-report.html for seo/sitemap
-          const sourceReportFile = reportFile
-          console.log("Using report file:", sourceReportFile)
-
           const htmlReportPath = path.join(
             __dirname,
-            "../backstopproject",
-            sourceReportFile
+            "../backstopproject/qa-report.html"
           )
-
-          if (!fs.existsSync(htmlReportPath)) {
-            return res.status(500).json({
-              status: "execution_failed",
-              logs: logs + `\nMissing report file: ${htmlReportPath}`
-            })
-          }
-
-          if (type === "seo" || type === "sitemap") {
-            console.log("Entered SEO/SITEMAP branch")
-          }
-
-          if (pdfGenerationSkipped) {
-            const reportBaseFolder =
-              type === "seo" ? "seo-tests" : "sitemap-tests"
-
-            const finalHtmlFolder = path.join(
-              __dirname,
-              `../backstopproject/reports/${reportBaseFolder}`,
-              timestamp
-            )
-
-            fs.ensureDirSync(finalHtmlFolder)
-
-            const finalHtmlPath = path.join(finalHtmlFolder, "report.html")
-
-            // Copy/rename so UI can open a consistent filename from /reports.
-            fs.copyFileSync(htmlReportPath, finalHtmlPath)
-
-            const newHistory = {
-              id: Date.now(),
-              timestamp,
-              testUrl,
-              referenceUrl: referenceUrl || "",
-              reportPath: `reports/${reportBaseFolder}/${timestamp}/report.html`,
-              reportType: "html",
-              status,
-              type
-            }
-
-            let historyData = []
-            if (fs.existsSync(historyFilePath)) {
-              historyData = fs.readJsonSync(historyFilePath)
-            }
-
-            historyData.unshift(newHistory)
-            fs.writeJsonSync(historyFilePath, historyData, { spaces: 2 })
-
-            console.log("Source report:", htmlReportPath)
-            console.log("Destination folder:", finalHtmlFolder)
-            console.log("Report copied to:", finalHtmlPath)
-            console.log("History updated")
-
-            return res.json({
-              success: true,
-              reportType: "html",
-              reportPath: `/reports/${reportBaseFolder}/${timestamp}/report.html`,
-              status
-            })
-          }
-
-
+      
           const pdfPath = path.join(
             reportDestination,
             "report.pdf"
           )
-
+      
           const browser = await chromium.launch()
           const page = await browser.newPage()
-
+      
           await page.goto(`file://${htmlReportPath}`, {
-            waitUntil: "load"
-          })
-
+  waitUntil: "load"
+})
+      
           await page.pdf({
             path: pdfPath,
             format: "A4",
             printBackground: true
           })
-
+      
           await browser.close()
+      
+          const historyFilePath = path.join(
+            __dirname,
+            "../backstopproject/reports/history.json"
+          )
       
           let historyData = []
 

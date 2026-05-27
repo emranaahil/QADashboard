@@ -50,7 +50,7 @@ async function main() {
   };
 
   const seoReportPath = path.join(__dirname, 'seoReport.json');
-  const reportHtmlPath = path.join(__dirname, '/backstopproject/reportseo.html');
+  const reportHtmlPath = path.join(__dirname, 'reportseo.html');
 
   fs.writeFileSync(seoReportPath, JSON.stringify(seoReport, null, 2), 'utf8');
   const html = report.htmlReport;

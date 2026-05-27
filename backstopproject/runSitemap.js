@@ -11,7 +11,9 @@ try {
     console.log('⚠️ Backstop test failed (expected), continuing...');
   }
 
+  process.env.SITEMAP_OUTPUT_HTML = '1';
   execSync('node generateReport.js', { stdio: 'inherit' });
+
 
 } catch (e) {
   console.error('❌ Sitemap Pipeline failed:', e.message);

@@ -1,5 +1,189 @@
 [
   {
+    "id": 1779901508766,
+    "timestamp": "2026-05-27T17-04-54",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T17-04-54/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779901475958,
+    "timestamp": "2026-05-27T17-04-18",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T17-04-18/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779900913967,
+    "timestamp": "2026-05-27T16-54-59",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T16-54-59/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779900815496,
+    "timestamp": "2026-05-27T16-53-17",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T16-53-17/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779900402260,
+    "timestamp": "2026-05-27T16-46-20",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T16-46-20/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779899507535,
+    "timestamp": "2026-05-27T16-31-47",
+    "testUrl": "https:brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T16-31-47/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779897711928,
+    "timestamp": "2026-05-27T16-01-51",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T16-01-51/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779897361171,
+    "timestamp": "2026-05-27T15-56-00",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T15-56-00/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779897304713,
+    "timestamp": "2026-05-27T15-55-04",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T15-55-04/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779897303751,
+    "timestamp": "2026-05-27T15-55-03",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T15-55-03/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779897302622,
+    "timestamp": "2026-05-27T15-55-02",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T15-55-02/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779897301460,
+    "timestamp": "2026-05-27T15-55-01",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T15-55-01/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779897297953,
+    "timestamp": "2026-05-27T15-54-57",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "reportPath": "reports/seo-tests/2026-05-27T15-54-57/report.html",
+    "reportType": "html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779882035653,
+    "timestamp": "2026-05-27T11-40-33",
+    "testUrl": "https://brbmd.com",
+    "referenceUrl": "",
+    "pdfPath": "reports/SEO/2026-05-27T11-40-33/report.pdf",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779882020105,
+    "timestamp": "2026-05-27T11-40-15",
+    "testUrl": "https://google.com",
+    "referenceUrl": "",
+    "pdfPath": "reports/SEO/2026-05-27T11-40-15/report.pdf",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779880639092,
+    "timestamp": "2026-05-27T11-17-18",
+    "testUrl": "https:google.com",
+    "referenceUrl": "",
+    "pdfPath": "reports/SEO/2026-05-27T11-17-18/reportseo.html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779876813850,
+    "timestamp": "2026-05-27T10-13-33",
+    "testUrl": "https://google.com",
+    "referenceUrl": "",
+    "pdfPath": "reports/SEO/2026-05-27T10-13-33/reportseo.html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
+    "id": 1779876745921,
+    "timestamp": "2026-05-27T10-10-53",
+    "testUrl": "https:google.com",
+    "referenceUrl": "",
+    "pdfPath": "reports/ui-tests/2026-05-27T10-10-53/report.pdf",
+    "status": "failed",
+    "type": "ui"
+  },
+  {
+    "id": 1779876562060,
+    "timestamp": "2026-05-27T10-09-21",
+    "testUrl": "https://google.com",
+    "referenceUrl": "",
+    "pdfPath": "reports/SEO/2026-05-27T10-09-21/reportseo.html",
+    "status": "passed",
+    "type": "seo"
+  },
+  {
     "id": 1779697584415,
     "timestamp": "2026-05-25T08-25-03",
     "testUrl": "https://google.com",

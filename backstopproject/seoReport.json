@@ -1,6 +1,6 @@
 {
   "mainUrl": "https://brbmd.com",
-  "scanDate": "2026-05-27T17:04:55.516Z",
+  "scanDate": "2026-05-27T08:37:27.527Z",
   "sitemapUsed": "https://brbmd.com/sitemap.xml",
   "urlsAttempted": 6,
   "concurrency": 4,
@@ -13,7 +13,7 @@
       "h1Count": 1,
       "h2Count": 17,
       "h3Count": 8,
-      "hierarchyStatus": "NO (Broken heading hierarchy: h2 -> h2 (expected +1 step))",
+      "hierarchyStatus": "YES (strict hierarchy)",
       "counts": {
         "hrefHash": 0,
         "jsVoid": 1,
@@ -21,17 +21,16 @@
       },
       "issues": {
         "critical": [
-          "Bad links: javascript:void(0): Found 1 javascript:void(0) link(s).",
-          "Broken heading hierarchy: Broken heading hierarchy: h2 -> h2 (expected +1 step)",
+          "Bad links: javascript:void(0): 1 🔴",
           "Duplicate title across pages (CRITICAL)",
           "Duplicate description across pages (CRITICAL)"
         ],
         "minor": [],
         "hidden": []
       },
-      "seoScore": 60,
+      "seoScore": 70,
       "_debug": {
-        "durationMs": 10345
+        "durationMs": 14412
       }
     },
     {
@@ -41,7 +40,7 @@
       "h1Count": 1,
       "h2Count": 1,
       "h3Count": 1,
-      "hierarchyStatus": "NO (Broken heading hierarchy: h4 -> h4 (expected +1 step))",
+      "hierarchyStatus": "YES (strict hierarchy)",
       "counts": {
         "hrefHash": 0,
         "jsVoid": 1,
@@ -49,17 +48,16 @@
       },
       "issues": {
         "critical": [
-          "Bad links: javascript:void(0): Found 1 javascript:void(0) link(s).",
-          "Broken heading hierarchy: Broken heading hierarchy: h4 -> h4 (expected +1 step)",
+          "Bad links: javascript:void(0): 1 🔴",
           "Duplicate title across pages (CRITICAL)",
           "Duplicate description across pages (CRITICAL)"
         ],
         "minor": [],
         "hidden": []
       },
-      "seoScore": 60,
+      "seoScore": 70,
       "_debug": {
-        "durationMs": 4948
+        "durationMs": 9467
       }
     },
     {
@@ -69,7 +67,7 @@
       "h1Count": 1,
       "h2Count": 17,
       "h3Count": 5,
-      "hierarchyStatus": "NO (Broken heading hierarchy: h2 -> h2 (expected +1 step))",
+      "hierarchyStatus": "NO (Broken heading hierarchy: h2 -> h4 (skipping levels not allowed))",
       "counts": {
         "hrefHash": 0,
         "jsVoid": 12,
@@ -77,8 +75,8 @@
       },
       "issues": {
         "critical": [
-          "Bad links: javascript:void(0): Found 12 javascript:void(0) link(s).",
-          "Broken heading hierarchy: Broken heading hierarchy: h2 -> h2 (expected +1 step)",
+          "Bad links: javascript:void(0): 12 🔴",
+          "Broken heading hierarchy: Broken heading hierarchy: h2 -> h4 (skipping levels not allowed)",
           "Duplicate description across pages (CRITICAL)"
         ],
         "minor": [],
@@ -86,7 +84,7 @@
       },
       "seoScore": 70,
       "_debug": {
-        "durationMs": 11987
+        "durationMs": 15468
       }
     },
     {
@@ -96,7 +94,7 @@
       "h1Count": 1,
       "h2Count": 2,
       "h3Count": 1,
-      "hierarchyStatus": "NO (Broken heading hierarchy: h2 -> h2 (expected +1 step))",
+      "hierarchyStatus": "YES (strict hierarchy)",
       "counts": {
         "hrefHash": 0,
         "jsVoid": 1,
@@ -104,17 +102,16 @@
       },
       "issues": {
         "critical": [
-          "Bad links: javascript:void(0): Found 1 javascript:void(0) link(s).",
-          "Broken heading hierarchy: Broken heading hierarchy: h2 -> h2 (expected +1 step)",
+          "Bad links: javascript:void(0): 1 🔴",
           "Duplicate title across pages (CRITICAL)",
           "Duplicate description across pages (CRITICAL)"
         ],
         "minor": [],
         "hidden": []
       },
-      "seoScore": 60,
+      "seoScore": 70,
       "_debug": {
-        "durationMs": 5333
+        "durationMs": 10256
       }
     },
     {
@@ -124,7 +121,7 @@
       "h1Count": 1,
       "h2Count": 27,
       "h3Count": 1,
-      "hierarchyStatus": "NO (Broken heading hierarchy: h2 -> h2 (expected +1 step))",
+      "hierarchyStatus": "YES (strict hierarchy)",
       "counts": {
         "hrefHash": 0,
         "jsVoid": 16,
@@ -132,17 +129,16 @@
       },
       "issues": {
         "critical": [
-          "Bad links: javascript:void(0): Found 16 javascript:void(0) link(s).",
-          "Broken heading hierarchy: Broken heading hierarchy: h2 -> h2 (expected +1 step)",
+          "Bad links: javascript:void(0): 16 🔴",
           "Duplicate title across pages (CRITICAL)",
           "Duplicate description across pages (CRITICAL)"
         ],
         "minor": [],
         "hidden": []
       },
-      "seoScore": 60,
+      "seoScore": 70,
       "_debug": {
-        "durationMs": 6341
+        "durationMs": 12191
       }
     },
     {
@@ -152,7 +148,7 @@
       "h1Count": 1,
       "h2Count": 11,
       "h3Count": 2,
-      "hierarchyStatus": "NO (Broken heading hierarchy: h2 -> h2 (expected +1 step))",
+      "hierarchyStatus": "YES (strict hierarchy)",
       "counts": {
         "hrefHash": 0,
         "jsVoid": 14,
@@ -160,25 +156,24 @@
       },
       "issues": {
         "critical": [
-          "Bad links: javascript:void(0): Found 14 javascript:void(0) link(s).",
-          "Broken heading hierarchy: Broken heading hierarchy: h2 -> h2 (expected +1 step)",
+          "Bad links: javascript:void(0): 14 🔴",
           "Duplicate title across pages (CRITICAL)",
           "Duplicate description across pages (CRITICAL)"
         ],
         "minor": [],
         "hidden": []
       },
-      "seoScore": 60,
+      "seoScore": 70,
       "_debug": {
-        "durationMs": 6160
+        "durationMs": 11339
       }
     }
   ],
   "summary": {
     "totalPages": 6,
-    "totalCritical": 23,
+    "totalCritical": 18,
     "totalMinor": 0,
     "totalHidden": 0,
-    "averageScore": 61.666666666666664
+    "averageScore": 70
   }
 }
