@@ -1,0 +1,406 @@
+
+<html>
+<head>
+<title>QA Reprot By Md Imran</title>
+<link rel="icon" href="./assets/favicon.png">
+
+<style>
+body {
+  font-family: Arial;
+  background:#0f172a;
+  color:#fff;
+  padding:20px;
+}
+.severity {
+  margin-left: 10px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.severity.critical {
+  background: #ff4757;
+  color: white;
+}
+
+.severity.major {
+  background: #ffa502;
+  color: black;
+}
+
+.severity.minor {
+  background: #2ed573;
+  color: black;
+}
+
+h1 {
+  margin-bottom:20px;
+}
+
+.filters {
+  margin-bottom:20px;
+}
+
+select {
+  padding:6px;
+  margin-right:10px;
+}
+
+.card {
+  background:#1e293b;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:8px;
+}
+
+.pass { border-left:5px solid #22c55e; }
+.fail { border-left:5px solid #ef4444; }
+
+.score {
+  font-size:18px;
+  margin:10px 0;
+}
+
+img {
+  width:500px;
+  cursor:pointer;
+  margin-top:10px;
+  border:1px solid #333;
+}
+
+.viewer {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  text-align:center;
+}
+
+.viewer img {
+  max-width:90%;
+  max-height:90%;
+  margin-top:5%;
+}
+</style>
+</head>
+
+<body>
+
+<h1>QA Dashboard</h1>
+
+<div class="filters">
+  <label>Page:</label>
+  <select id="pageFilter"></select>
+
+  <label>Device:</label>
+  <select id="deviceFilter"></select>
+  <label>Severity:</label>
+<select id="severityFilter">
+  <option value="">All</option>
+  <option value="critical">Critical</option>
+  <option value="major">Major</option>
+  <option value="minor">Minor</option>
+</select>
+</div>
+
+  <div class="card pass"
+  data-page="default Page contact-us"
+  data-device="Windows"
+  data-severity="minor">
+
+  <h2>
+  default Page contact-us | Windows | Issues: 0
+  
+  <span class="severity minor">
+    MINOR
+  </span>
+  
+  <span class="pass">
+    PASS
+  </span>
+  </h2> 
+
+<div class="score">
+UI Health Score: 100/100
+</div>
+
+<br>
+
+<img src="backstop_data\bitmaps_test\20260503-214707\backstop_default_Page_contact-us_0_document_0_Windows.png"
+onclick="openImage(this.src)" />
+
+<p>No issues detected</p>
+
+</div>
+
+  <div class="card pass"
+  data-page="default Page erectile-dysfunction h"
+  data-device="Windows"
+  data-severity="minor">
+
+  <h2>
+  default Page erectile-dysfunction h | Windows | Issues: 0
+  
+  <span class="severity minor">
+    MINOR
+  </span>
+  
+  <span class="pass">
+    PASS
+  </span>
+  </h2> 
+
+<div class="score">
+UI Health Score: 100/100
+</div>
+
+<br>
+
+<img src="backstop_data\bitmaps_test\20260503-214707\backstop_default_Page_erectile-dysfunction_h_0_document_0_Windows.png"
+onclick="openImage(this.src)" />
+
+<p>No issues detected</p>
+
+</div>
+
+  <div class="card pass"
+  data-page="default Page home"
+  data-device="Windows"
+  data-severity="minor">
+
+  <h2>
+  default Page home | Windows | Issues: 0
+  
+  <span class="severity minor">
+    MINOR
+  </span>
+  
+  <span class="pass">
+    PASS
+  </span>
+  </h2> 
+
+<div class="score">
+UI Health Score: 100/100
+</div>
+
+<br>
+
+<img src="backstop_data\bitmaps_test\20260503-214707\backstop_default_Page_home_0_document_0_Windows.png"
+onclick="openImage(this.src)" />
+
+<p>No issues detected</p>
+
+</div>
+
+  <div class="card pass"
+  data-page="default Page login"
+  data-device="Windows"
+  data-severity="minor">
+
+  <h2>
+  default Page login | Windows | Issues: 0
+  
+  <span class="severity minor">
+    MINOR
+  </span>
+  
+  <span class="pass">
+    PASS
+  </span>
+  </h2> 
+
+<div class="score">
+UI Health Score: 100/100
+</div>
+
+<br>
+
+<img src="backstop_data\bitmaps_test\20260503-214707\backstop_default_Page_login_0_document_0_Windows.png"
+onclick="openImage(this.src)" />
+
+<p>No issues detected</p>
+
+</div>
+
+  <div class="card pass"
+  data-page="default Page privacy-policy"
+  data-device="Windows"
+  data-severity="minor">
+
+  <h2>
+  default Page privacy-policy | Windows | Issues: 0
+  
+  <span class="severity minor">
+    MINOR
+  </span>
+  
+  <span class="pass">
+    PASS
+  </span>
+  </h2> 
+
+<div class="score">
+UI Health Score: 100/100
+</div>
+
+<br>
+
+<img src="backstop_data\bitmaps_test\20260503-214707\backstop_default_Page_privacy-policy_0_document_0_Windows.png"
+onclick="openImage(this.src)" />
+
+<p>No issues detected</p>
+
+</div>
+
+  <div class="card pass"
+  data-page="default Page terms-condition"
+  data-device="Windows"
+  data-severity="minor">
+
+  <h2>
+  default Page terms-condition | Windows | Issues: 0
+  
+  <span class="severity minor">
+    MINOR
+  </span>
+  
+  <span class="pass">
+    PASS
+  </span>
+  </h2> 
+
+<div class="score">
+UI Health Score: 100/100
+</div>
+
+<br>
+
+<img src="backstop_data\bitmaps_test\20260503-214707\backstop_default_Page_terms-condition_0_document_0_Windows.png"
+onclick="openImage(this.src)" />
+
+<p>No issues detected</p>
+
+</div>
+
+  <div class="card pass"
+  data-page="diff backstop default Page erectile-dysfunction h"
+  data-device="Windows"
+  data-severity="minor">
+
+  <h2>
+  diff backstop default Page erectile-dysfunction h | Windows | Issues: 0
+  
+  <span class="severity minor">
+    MINOR
+  </span>
+  
+  <span class="pass">
+    PASS
+  </span>
+  </h2> 
+
+<div class="score">
+UI Health Score: 100/100
+</div>
+
+<br>
+
+<img src="backstop_data\bitmaps_test\20260503-214707\failed_diff_backstop_default_Page_erectile-dysfunction_h_0_document_0_Windows.png"
+onclick="openImage(this.src)" />
+
+<p>No issues detected</p>
+
+</div>
+
+  <div class="card pass"
+  data-page="diff backstop default Page home"
+  data-device="Windows"
+  data-severity="minor">
+
+  <h2>
+  diff backstop default Page home | Windows | Issues: 0
+  
+  <span class="severity minor">
+    MINOR
+  </span>
+  
+  <span class="pass">
+    PASS
+  </span>
+  </h2> 
+
+<div class="score">
+UI Health Score: 100/100
+</div>
+
+<br>
+
+<img src="backstop_data\bitmaps_test\20260503-214707\failed_diff_backstop_default_Page_home_0_document_0_Windows.png"
+onclick="openImage(this.src)" />
+
+<p>No issues detected</p>
+
+</div>
+
+
+<div class="viewer" id="viewer" onclick="this.style.display='none'">
+  <img id="fullImg">
+</div>
+
+<script>
+
+const pageSet = new Set();
+const deviceSet = new Set();
+
+document.querySelectorAll('.card').forEach(card => {
+  pageSet.add(card.dataset.page);
+  deviceSet.add(card.dataset.device);
+});
+
+const pageFilter = document.getElementById('pageFilter');
+const deviceFilter = document.getElementById('deviceFilter');
+
+pageFilter.innerHTML =
+  '<option value="">All</option>' +
+  [...pageSet].map(p => '<option>'+p+'</option>').join('');
+
+deviceFilter.innerHTML =
+  '<option value="">All</option>' +
+  [...deviceSet].map(d => '<option>'+d+'</option>').join('');
+
+  const severityFilter = document.getElementById('severityFilter');
+
+  pageFilter.onchange =
+  deviceFilter.onchange =
+  severityFilter.onchange = filterData;
+
+function filterData() {
+
+  const p = pageFilter.value;
+  const d = deviceFilter.value;
+  const s = severityFilter.value;
+
+  document.querySelectorAll('.card').forEach(card => {
+
+    const show =
+    (!p || card.dataset.page === p) &&
+    (!d || card.dataset.device === d) &&
+    (!s || card.dataset.severity === s);
+
+    card.style.display = show ? 'block' : 'none';
+
+  });
+
+}
+
+function openImage(src){
+  document.getElementById('viewer').style.display='block';
+  document.getElementById('fullImg').src = src;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+{
+  
+  "name": "my-backstop-project",
+  
+  "version": "1.0.0",
+  
+  "description": "",
+  
+  "main": "backstop.config.js",
+  
+  "scripts": {
+  
+    
+  "test": "echo \"Error: no test specified\" && exit 1",
+  
+    
+  "test:ui": "node generateConfig.js && backstop test && node generateReport.js"
+  
+  },
+  
+  "keywords": [],
+  
+  "author": "",
+  
+  "license": "ISC",
+  
+  "type": "commonjs",
+  
+  "dependencies": {
+  
+    
+  "@playwright/test": "^1.60.0",
+  
+    
+  "axios": "^1.15.2",
+  
+    
+  "pixelmatch": "^7.2.0",
+  
+    
+  "pngjs": "^7.0.0",
+  
+    
+  "socket.io": "^4.8.3",
+  
+    
+  "xml2js": "^0.6.2"
+  
+  },
+  
+  "devDependencies": {
+  
+    
+  "backstopjs": "^6.3.25",
+  
+    
+  "playwright": "^1.60.0"
+  
+  }
+}

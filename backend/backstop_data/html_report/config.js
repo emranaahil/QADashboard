@@ -1,0 +1,40 @@
+report({
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_BackstopJS_Homepage_0__0_phone.png",
+        "test": "..\\bitmaps_test\\20260521-154631\\backstop_default_BackstopJS_Homepage_0__0_phone.png",
+        "selector": "",
+        "fileName": "backstop_default_BackstopJS_Homepage_0__0_phone.png",
+        "label": "BackstopJS Homepage",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://test.com",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "engineErrorMsg": "net::ERR_NAME_NOT_RESOLVED at https://test.com",
+        "error": "Reference file not found D:\\Project\\qaiachatbot\\ui-test-dashboard\\backend\\backstop_data\\bitmaps_reference\\backstop_default_BackstopJS_Homepage_0__0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_BackstopJS_Homepage_0__1_tablet.png",
+        "test": "..\\bitmaps_test\\20260521-154631\\backstop_default_BackstopJS_Homepage_0__1_tablet.png",
+        "selector": "",
+        "fileName": "backstop_default_BackstopJS_Homepage_0__1_tablet.png",
+        "label": "BackstopJS Homepage",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://test.com",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "engineErrorMsg": "net::ERR_NAME_NOT_RESOLVED at https://test.com",
+        "error": "Reference file not found D:\\Project\\qaiachatbot\\ui-test-dashboard\\backend\\backstop_data\\bitmaps_reference\\backstop_default_BackstopJS_Homepage_0__1_tablet.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "backstop_default"
+});

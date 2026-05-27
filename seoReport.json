@@ -1,0 +1,172 @@
+{
+  "mainUrl": "https://matsunnutrition.com",
+  "scanDate": "2026-05-27T07:17:27.883Z",
+  "sitemapUsed": "https://matsunnutrition.com/sitemap.xml",
+  "urlsAttempted": 5,
+  "concurrency": 4,
+  "timeoutMs": 15000,
+  "pages": [
+    {
+      "url": "https://matsunnutrition.com/post-sitemap.xml",
+      "title": "XML Sitemap",
+      "description": "",
+      "h1Count": 1,
+      "h2Count": 0,
+      "h3Count": 0,
+      "hierarchyStatus": "YES (strict hierarchy)",
+      "counts": {
+        "hrefHash": 0,
+        "jsVoid": 0,
+        "missingAlt": 0
+      },
+      "issues": {
+        "critical": [
+          "Missing meta description: No meta[name=\"description\"] tag found in source.",
+          "Missing Open Graph tags: Missing required OG tag(s): og:title, og:description, og:image",
+          "Duplicate title across pages (CRITICAL)"
+        ],
+        "minor": [
+          "Missing canonical: No canonical link tag found in source.",
+          "Missing <html lang>: html element missing lang attribute.",
+          "Missing viewport meta: meta[name=\"viewport\"] missing."
+        ],
+        "hidden": []
+      },
+      "seoScore": 61,
+      "_debug": {
+        "durationMs": 13453
+      }
+    },
+    {
+      "url": "https://matsunnutrition.com/page-sitemap.xml",
+      "title": "XML Sitemap",
+      "description": "",
+      "h1Count": 1,
+      "h2Count": 0,
+      "h3Count": 0,
+      "hierarchyStatus": "YES (strict hierarchy)",
+      "counts": {
+        "hrefHash": 0,
+        "jsVoid": 0,
+        "missingAlt": 0
+      },
+      "issues": {
+        "critical": [
+          "Missing meta description: No meta[name=\"description\"] tag found in source.",
+          "Missing Open Graph tags: Missing required OG tag(s): og:title, og:description, og:image",
+          "Duplicate title across pages (CRITICAL)"
+        ],
+        "minor": [
+          "Missing canonical: No canonical link tag found in source.",
+          "Missing <html lang>: html element missing lang attribute.",
+          "Missing viewport meta: meta[name=\"viewport\"] missing."
+        ],
+        "hidden": []
+      },
+      "seoScore": 61,
+      "_debug": {
+        "durationMs": 13068
+      }
+    },
+    {
+      "url": "https://matsunnutrition.com/product-sitemap.xml",
+      "title": "XML Sitemap",
+      "description": "",
+      "h1Count": 1,
+      "h2Count": 0,
+      "h3Count": 0,
+      "hierarchyStatus": "YES (strict hierarchy)",
+      "counts": {
+        "hrefHash": 0,
+        "jsVoid": 0,
+        "missingAlt": 0
+      },
+      "issues": {
+        "critical": [
+          "Missing meta description: No meta[name=\"description\"] tag found in source.",
+          "Missing Open Graph tags: Missing required OG tag(s): og:title, og:description, og:image",
+          "Duplicate title across pages (CRITICAL)"
+        ],
+        "minor": [
+          "Missing canonical: No canonical link tag found in source.",
+          "Missing <html lang>: html element missing lang attribute.",
+          "Missing viewport meta: meta[name=\"viewport\"] missing."
+        ],
+        "hidden": []
+      },
+      "seoScore": 61,
+      "_debug": {
+        "durationMs": 12634
+      }
+    },
+    {
+      "url": "https://matsunnutrition.com/product_cat-sitemap.xml",
+      "title": "XML Sitemap",
+      "description": "",
+      "h1Count": 1,
+      "h2Count": 0,
+      "h3Count": 0,
+      "hierarchyStatus": "YES (strict hierarchy)",
+      "counts": {
+        "hrefHash": 0,
+        "jsVoid": 0,
+        "missingAlt": 0
+      },
+      "issues": {
+        "critical": [
+          "Missing meta description: No meta[name=\"description\"] tag found in source.",
+          "Missing Open Graph tags: Missing required OG tag(s): og:title, og:description, og:image",
+          "Duplicate title across pages (CRITICAL)"
+        ],
+        "minor": [
+          "Missing canonical: No canonical link tag found in source.",
+          "Missing <html lang>: html element missing lang attribute.",
+          "Missing viewport meta: meta[name=\"viewport\"] missing."
+        ],
+        "hidden": []
+      },
+      "seoScore": 61,
+      "_debug": {
+        "durationMs": 12626
+      }
+    },
+    {
+      "url": "https://matsunnutrition.com/author-sitemap.xml",
+      "title": "XML Sitemap",
+      "description": "",
+      "h1Count": 1,
+      "h2Count": 0,
+      "h3Count": 0,
+      "hierarchyStatus": "YES (strict hierarchy)",
+      "counts": {
+        "hrefHash": 0,
+        "jsVoid": 0,
+        "missingAlt": 0
+      },
+      "issues": {
+        "critical": [
+          "Missing meta description: No meta[name=\"description\"] tag found in source.",
+          "Missing Open Graph tags: Missing required OG tag(s): og:title, og:description, og:image",
+          "Duplicate title across pages (CRITICAL)"
+        ],
+        "minor": [
+          "Missing canonical: No canonical link tag found in source.",
+          "Missing <html lang>: html element missing lang attribute.",
+          "Missing viewport meta: meta[name=\"viewport\"] missing."
+        ],
+        "hidden": []
+      },
+      "seoScore": 61,
+      "_debug": {
+        "durationMs": 9798
+      }
+    }
+  ],
+  "summary": {
+    "totalPages": 5,
+    "totalCritical": 15,
+    "totalMinor": 15,
+    "totalHidden": 0,
+    "averageScore": 61
+  }
+}

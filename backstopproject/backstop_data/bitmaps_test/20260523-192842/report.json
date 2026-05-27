@@ -1,0 +1,32 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20260523-192842\\ui-check_Home_Page_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_0_desktop.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://temp-mail.org/en/",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.578139251385673,
+          "misMatchPercentage": "3.58",
+          "analysisTime": 291
+        },
+        "diffImage": "..\\bitmaps_test\\20260523-192842\\failed_diff_ui-check_Home_Page_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "ui-check"
+}

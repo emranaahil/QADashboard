@@ -1,0 +1,30 @@
+[
+  {
+    "page": "Site URLS",
+    "url": "https://google.com",
+    "device": "desktop",
+    "issues": [
+      "Failed Request: https://www.google.com/search/howsearchworks/?fg=1",
+      "Failed Request: https://about.google/?fg=1&utm_source=google-IN&utm_medium=referral&utm_campaign=hp-header",
+      "Failed Request: https://www.google.com/imghp?hl=en&ogbl",
+      "Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=hi&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBc",
+      "Failed Request: https://about.google/products/",
+      "Failed Request: https://policies.google.com/privacy?hl=en-IN&fg=1",
+      "Failed Request: https://policies.google.com/terms?hl=en-IN&fg=1",
+      "Failed Request: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%2F&dsh=S1815859506%3A1779697577965187&ec=futura_exp_og_so_72776762_e&hl=en&passive=true&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AWa2PavFbFLbJbc4R-KWw_MaZqm4lQZDxElzOIGGlCfIf_ELUCu8vlD4wSYvRQbweAfSQZsE8odP",
+      "Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=bn&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBg",
+      "Failed Request: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%26ogbl%2F&dsh=S-2111722849%3A1779697578316567&emr=1&ltmpl=default&ltmplcache=2&osid=1&passive=true&rm=false&scc=1&service=mail&ss=1&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AWa2PauZGhPNiBfGoKK_GK0pPHfpOJQ40q3w8Oa3RoWL0PXpaRooTW3pkEuEyuqB75z3DSH8R5_KWw",
+      "Failed Request: https://business.google.com/in/business-profile/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1",
+      "Failed Request: https://business.google.com/in/google-ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1",
+      "Failed Request: https://store.google.com/in/?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=en-IN",
+      "Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=te&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBk",
+      "Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=ta&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBs",
+      "Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=kn&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCB0",
+      "Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=pa&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCB8",
+      "Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=gu&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBw",
+      "Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=mr&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBo",
+      "Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=ml&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCB4"
+    ],
+    "timestamp": "2026-05-25T08:26:20.867Z"
+  }
+]

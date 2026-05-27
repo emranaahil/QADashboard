@@ -1,0 +1,339 @@
+
+<html>
+<head>
+<title>QA Reprot By Md Imran</title>
+<link rel="icon" href="./assets/favicon.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body {
+  font-family: Arial;
+  background:#0f172a;
+  color:#fff;
+  padding:20px;
+}
+.severity {
+  margin-left: 10px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.severity.critical {
+  background: #ff4757;
+  color: white;
+}
+
+.severity.major {
+  background: #ffa502;
+  color: black;
+}
+
+.severity.minor {
+  background: #2ed573;
+  color: black;
+}
+
+h1 {
+  margin-bottom:20px;
+}
+
+.filters {
+  margin-bottom:20px;
+}
+
+select {
+  padding:6px;
+  margin-right:10px;
+}
+
+.card {
+  background:#1e293b;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:8px;
+}
+
+.pass { border-left:5px solid #22c55e; }
+.fail { border-left:5px solid #ef4444; }
+
+.score {
+  font-size:18px;
+  margin:10px 0;
+}
+
+img {
+  width:500px;
+  cursor:pointer;
+  margin-top:10px;
+  border:1px solid #333;
+}
+
+.viewer {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  text-align:center;
+}
+
+.viewer img {
+  max-width:90%;
+  max-height:90%;
+  margin-top:5%;
+}
+</style>
+</head>
+
+<script>
+async function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+
+  const pdf = new jsPDF('p', 'mm', 'a4');
+
+  const cards = document.querySelectorAll('.card');
+
+  const margin = 10;
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const usableWidth = pageWidth - (margin * 2);
+
+  for (let i = 0; i < cards.length; i++) {
+
+    const canvas = await html2canvas(cards[i], {
+      scale: 2,
+      useCORS: true
+    });
+
+    const imgData = canvas.toDataURL('image/png');
+
+    const imgHeight = (canvas.height * usableWidth) / canvas.width;
+
+    if (i > 0) pdf.addPage();
+
+    /* ---------- HEADER ---------- */
+    pdf.setFontSize(12);
+    pdf.text("QA Report - Md Imran", margin, 8);
+
+    pdf.setFontSize(9);
+    pdf.text(new Date().toLocaleString(), pageWidth - 60, 8);
+
+    /* ---------- IMAGE ---------- */
+    pdf.addImage(
+      imgData,
+      'PNG',
+      margin,
+      15,
+      usableWidth,
+      imgHeight
+    );
+
+    /* ---------- FOOTER ---------- */
+    
+  }
+
+  pdf.save('QA-Report.pdf');
+}
+</script>
+<body>
+
+<h1>QA Reprot by Md Imran</h1>
+
+
+
+<div class="filters">
+  <label>Page:</label>
+  <select id="pageFilter"></select>
+
+  <label>Device:</label>
+  <select id="deviceFilter"></select>
+  <label>Severity:</label>
+<select id="severityFilter">
+  <option value="">All</option>
+  <option value="critical">Critical</option>
+  <option value="major">Major</option>
+  <option value="minor">Minor</option>
+</select>
+
+<button onclick="window.print()">🖨️ Print / Save PDF</button>
+
+<style>
+@media print {
+  .filters, button {
+    display: none;
+  }
+
+  .card {
+    page-break-after: always;
+  }
+}
+
+</style>
+
+</div>
+
+  <div class="card fail"
+  data-page="Site URLS"
+  data-device="desktop"
+  data-severity="minor">
+
+  <h2>
+  Site URLS | desktop | Issues: 20
+  
+  <span class="severity minor">
+    MINOR
+  </span>
+  
+  <span class="fail">
+    FAIL
+  </span>
+  </h2> 
+
+<div class="score">
+UI Health Score: 100/100
+</div>
+
+<br>
+
+<img src="backstop_data\bitmaps_test\20260525-135548\ui-check_Site_URLS_0_document_0_desktop.png"
+onclick="openImage(this.src)" />
+
+
+
+<h3>Issue Breakdown</h3>
+<ul>
+<li>Broken: 0</li>
+<li>Overlap: 0</li>
+<li>Overflow: 0</li>
+<li>Alignment: 0</li>
+<li>Baseline: 0</li>
+<li>Center-axis: 0</li>
+<li>Spacing: 0</li>
+</ul>
+
+
+<style>
+.pulse-alert {
+  background: #ff4757;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,71,87, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255,71,87, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,71,87, 0); }
+}
+
+.legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px;
+  background: #1e293b;
+  border-radius: 8px;
+}
+
+.item {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.broken { background:#ffe5e5; color:#d63031; }
+.overflow { background:#fff4e5; color:#e67e22; }
+.overlap { background:#f3e5f5; color:#8e44ad; }
+.alignment { background:#e7f1ff; color:#2980b9; }
+
+.high { color:#ef4444; }
+.medium { color:#f59e0b; }
+.low { color:#22c55e; }
+</style>
+
+
+<div class="pulse-alert">
+⚠️ Check highlight colors in screenshot
+</div>
+
+<div class="legend">
+  <span class="item broken">🔴 Broken</span>
+  <span class="item overflow">🟠 Overflow</span>
+  <span class="item overlap">🟣 Overlap</span>
+  <span class="item alignment">🔵 Alignment</span>
+</div>
+
+<h3>⚠️ Detected Issues</h3>
+<ul>
+<li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/search/howsearchworks/?fg=1</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://about.google/?fg=1&utm_source=google-IN&utm_medium=referral&utm_campaign=hp-header</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/imghp?hl=en&ogbl</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=hi&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBc</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://about.google/products/</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://policies.google.com/privacy?hl=en-IN&fg=1</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://policies.google.com/terms?hl=en-IN&fg=1</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%2F&dsh=S1815859506%3A1779697577965187&ec=futura_exp_og_so_72776762_e&hl=en&passive=true&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AWa2PavFbFLbJbc4R-KWw_MaZqm4lQZDxElzOIGGlCfIf_ELUCu8vlD4wSYvRQbweAfSQZsE8odP</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=bn&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBg</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F%26ogbl%2F&dsh=S-2111722849%3A1779697578316567&emr=1&ltmpl=default&ltmplcache=2&osid=1&passive=true&rm=false&scc=1&service=mail&ss=1&flowName=WebLiteSignIn&flowEntry=ServiceLogin&ifkv=AWa2PauZGhPNiBfGoKK_GK0pPHfpOJQ40q3w8Oa3RoWL0PXpaRooTW3pkEuEyuqB75z3DSH8R5_KWw</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://business.google.com/in/business-profile/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://business.google.com/in/google-ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://store.google.com/in/?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=en-IN</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=te&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBk</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=ta&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBs</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=kn&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCB0</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=pa&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCB8</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=gu&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBw</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=mr&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCBo</li><li style="color:#22c55e; font-weight:600;">Failed Request: https://www.google.com/setprefs?sig=0_eFyb0dYXOBjQscZScM1-ID2suuw%3D&hl=ml&source=homepage&sa=X&ved=0ahUKEwjLtJ-CgtSUAxVjFbkGHaEyNpQQ2ZgBCB4</li>
+</ul>
+
+
+
+</div>
+
+
+<div class="viewer" id="viewer" onclick="this.style.display='none'">
+  <img id="fullImg">
+</div>
+
+<script>
+
+const pageSet = new Set();
+const deviceSet = new Set();
+
+document.querySelectorAll('.card').forEach(card => {
+  pageSet.add(card.dataset.page);
+  deviceSet.add(card.dataset.device);
+});
+
+const pageFilter = document.getElementById('pageFilter');
+const deviceFilter = document.getElementById('deviceFilter');
+
+pageFilter.innerHTML =
+  '<option value="">All</option>' +
+  [...pageSet].map(p => '<option>'+p+'</option>').join('');
+
+deviceFilter.innerHTML =
+  '<option value="">All</option>' +
+  [...deviceSet].map(d => '<option>'+d+'</option>').join('');
+
+  const severityFilter = document.getElementById('severityFilter');
+
+  pageFilter.onchange =
+  deviceFilter.onchange =
+  severityFilter.onchange = filterData;
+
+function filterData() {
+
+  const p = pageFilter.value;
+  const d = deviceFilter.value;
+  const s = severityFilter.value;
+
+  document.querySelectorAll('.card').forEach(card => {
+
+    const show =
+    (!p || card.dataset.page === p) &&
+    (!d || card.dataset.device === d) &&
+    (!s || card.dataset.severity === s);
+
+    card.style.display = show ? 'block' : 'none';
+
+  });
+
+}
+
+function openImage(src){
+  document.getElementById('viewer').style.display='block';
+  document.getElementById('fullImg').src = src;
+}
+
+</script>
+
+</body>
+</html>

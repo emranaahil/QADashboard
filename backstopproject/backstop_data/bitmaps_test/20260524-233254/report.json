@@ -1,0 +1,32 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Site_URLS_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20260524-233254\\ui-check_Site_URLS_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "ui-check_Site_URLS_0_document_0_desktop.png",
+        "label": "Site URLS",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://brbmd.com",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 0.5229598780554194,
+          "misMatchPercentage": "0.52",
+          "analysisTime": 205
+        },
+        "diffImage": "..\\bitmaps_test\\20260524-233254\\failed_diff_ui-check_Site_URLS_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "ui-check"
+}

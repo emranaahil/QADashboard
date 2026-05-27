@@ -1,0 +1,168 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Page___0_document_0_Windows.png",
+        "test": "..\\bitmaps_test\\20260524-144708\\backstop_default_Page___0_document_0_Windows.png",
+        "selector": "document",
+        "fileName": "backstop_default_Page___0_document_0_Windows.png",
+        "label": "Page__",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://brbmd.com/",
+        "referenceUrl": "https://staging.brbmd.com/",
+        "expect": 0,
+        "viewportLabel": "Windows",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -29
+          },
+          "rawMisMatchPercentage": 0.5046631176853056,
+          "misMatchPercentage": "0.50",
+          "analysisTime": 269
+        },
+        "diffImage": "..\\bitmaps_test\\20260524-144708\\failed_diff_backstop_default_Page___0_document_0_Windows.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Page__login_0_document_0_Windows.png",
+        "test": "..\\bitmaps_test\\20260524-144708\\backstop_default_Page__login_0_document_0_Windows.png",
+        "selector": "document",
+        "fileName": "backstop_default_Page__login_0_document_0_Windows.png",
+        "label": "Page__login",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://brbmd.com/login",
+        "referenceUrl": "https://staging.brbmd.com/login",
+        "expect": 0,
+        "viewportLabel": "Windows",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -29
+          },
+          "rawMisMatchPercentage": 2.4054020413243715,
+          "misMatchPercentage": "2.41",
+          "analysisTime": 51
+        },
+        "diffImage": "..\\bitmaps_test\\20260524-144708\\failed_diff_backstop_default_Page__login_0_document_0_Windows.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Page__erectile-dysfunction_h_0_document_0_Windows.png",
+        "test": "..\\bitmaps_test\\20260524-144708\\backstop_default_Page__erectile-dysfunction_h_0_document_0_Windows.png",
+        "selector": "document",
+        "fileName": "backstop_default_Page__erectile-dysfunction_h_0_document_0_Windows.png",
+        "label": "Page__erectile-dysfunction_h",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://brbmd.com/erectile-dysfunction/h",
+        "referenceUrl": "https://staging.brbmd.com/erectile-dysfunction/h",
+        "expect": 0,
+        "viewportLabel": "Windows",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -29
+          },
+          "rawMisMatchPercentage": 14.582347523776749,
+          "misMatchPercentage": "14.58",
+          "analysisTime": 296
+        },
+        "diffImage": "..\\bitmaps_test\\20260524-144708\\failed_diff_backstop_default_Page__erectile-dysfunction_h_0_document_0_Windows.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Page__contact-us_0_document_0_Windows.png",
+        "test": "..\\bitmaps_test\\20260524-144708\\backstop_default_Page__contact-us_0_document_0_Windows.png",
+        "selector": "document",
+        "fileName": "backstop_default_Page__contact-us_0_document_0_Windows.png",
+        "label": "Page__contact-us",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://brbmd.com/contact-us",
+        "referenceUrl": "https://staging.brbmd.com/contact-us",
+        "expect": 0,
+        "viewportLabel": "Windows",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -29
+          },
+          "rawMisMatchPercentage": 2.0992746492073695,
+          "misMatchPercentage": "2.10",
+          "analysisTime": 71
+        },
+        "diffImage": "..\\bitmaps_test\\20260524-144708\\failed_diff_backstop_default_Page__contact-us_0_document_0_Windows.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Page__terms-condition_0_document_0_Windows.png",
+        "test": "..\\bitmaps_test\\20260524-144708\\backstop_default_Page__terms-condition_0_document_0_Windows.png",
+        "selector": "document",
+        "fileName": "backstop_default_Page__terms-condition_0_document_0_Windows.png",
+        "label": "Page__terms-condition",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://brbmd.com/terms-condition",
+        "referenceUrl": "https://staging.brbmd.com/terms-condition",
+        "expect": 0,
+        "viewportLabel": "Windows",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -29
+          },
+          "rawMisMatchPercentage": 0.05674961182000532,
+          "misMatchPercentage": "0.06",
+          "analysisTime": 375
+        },
+        "diffImage": "..\\bitmaps_test\\20260524-144708\\failed_diff_backstop_default_Page__terms-condition_0_document_0_Windows.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_Page__privacy-policy_0_document_0_Windows.png",
+        "test": "..\\bitmaps_test\\20260524-144708\\backstop_default_Page__privacy-policy_0_document_0_Windows.png",
+        "selector": "document",
+        "fileName": "backstop_default_Page__privacy-policy_0_document_0_Windows.png",
+        "label": "Page__privacy-policy",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://brbmd.com/privacy-policy",
+        "referenceUrl": "https://staging.brbmd.com/privacy-policy",
+        "expect": 0,
+        "viewportLabel": "Windows",
+        "diff": {
+          "isSameDimensions": false,
+          "dimensionDifference": {
+            "width": 0,
+            "height": -29
+          },
+          "rawMisMatchPercentage": 0.09371671624798002,
+          "misMatchPercentage": "0.09",
+          "analysisTime": 307
+        },
+        "diffImage": "..\\bitmaps_test\\20260524-144708\\failed_diff_backstop_default_Page__privacy-policy_0_document_0_Windows.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "backstop_default"
+}

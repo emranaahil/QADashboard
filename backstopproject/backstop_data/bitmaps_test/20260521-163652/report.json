@@ -1,0 +1,213 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20260521-163652\\ui-check_Home_Page_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_0_desktop.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://google.com",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_1_iPhone13_portrait.png",
+        "test": "..\\bitmaps_test\\20260521-163652\\ui-check_Home_Page_0_document_1_iPhone13_portrait.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_1_iPhone13_portrait.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://google.com",
+        "expect": 0,
+        "viewportLabel": "iPhone13_portrait",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_2_iPhone13_landscape.png",
+        "test": "..\\bitmaps_test\\20260521-163652\\ui-check_Home_Page_0_document_2_iPhone13_landscape.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_2_iPhone13_landscape.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://google.com",
+        "expect": 0,
+        "viewportLabel": "iPhone13_landscape",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_3_iPhone15plus_portrait.png",
+        "test": "..\\bitmaps_test\\20260521-163652\\ui-check_Home_Page_0_document_3_iPhone15plus_portrait.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_3_iPhone15plus_portrait.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://google.com",
+        "expect": 0,
+        "viewportLabel": "iPhone15plus_portrait",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_4_iPhone15plus_landscape.png",
+        "test": "..\\bitmaps_test\\20260521-163652\\ui-check_Home_Page_0_document_4_iPhone15plus_landscape.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_4_iPhone15plus_landscape.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://google.com",
+        "expect": 0,
+        "viewportLabel": "iPhone15plus_landscape",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_5_S21_portrait.png",
+        "test": "..\\bitmaps_test\\20260521-163652\\ui-check_Home_Page_0_document_5_S21_portrait.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_5_S21_portrait.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://google.com",
+        "expect": 0,
+        "viewportLabel": "S21_portrait",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_6_S21_landscape.png",
+        "test": "..\\bitmaps_test\\20260521-163652\\ui-check_Home_Page_0_document_6_S21_landscape.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_6_S21_landscape.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://google.com",
+        "expect": 0,
+        "viewportLabel": "S21_landscape",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_7_tablet_portrait.png",
+        "test": "..\\bitmaps_test\\20260521-163652\\ui-check_Home_Page_0_document_7_tablet_portrait.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_7_tablet_portrait.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://google.com",
+        "expect": 0,
+        "viewportLabel": "tablet_portrait",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\ui-check_Home_Page_0_document_8_tablet_landscape.png",
+        "test": "..\\bitmaps_test\\20260521-163652\\ui-check_Home_Page_0_document_8_tablet_landscape.png",
+        "selector": "document",
+        "fileName": "ui-check_Home_Page_0_document_8_tablet_landscape.png",
+        "label": "Home Page",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://google.com",
+        "expect": 0,
+        "viewportLabel": "tablet_landscape",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    }
+  ],
+  "id": "ui-check"
+}
