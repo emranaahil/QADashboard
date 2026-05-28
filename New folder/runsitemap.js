@@ -33,14 +33,7 @@ async function main() {
   log('🔎 SEO audit started for:', mainUrl);
 
   console.time('SEO Audit');
-  const modeArg = process.argv[3];
-  let mode = "full";
-  if (modeArg === "single") mode = "single";
-  if (modeArg === "full" || !modeArg) mode = "full";
-
-  console.log("🧪 CLI MODE:", mode);
-
-  const report = await runSeoAudit({ mainUrl, mode });
+  const report = await runSeoAudit({ mainUrl });
   console.timeEnd('SEO Audit');
 
   log('🎉 SEO audit finished. Writing reports...');

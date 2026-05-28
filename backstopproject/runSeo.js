@@ -22,8 +22,9 @@ function normalizeArgUrl(inputUrl) {
 
 async function main() {
   const inputUrl = process.argv[2];
+  const mode = process.argv[3] || "full";
   if (!inputUrl) {
-    log('Usage: node runseo.js <url>');
+    log('❌ URL is required');
     process.exit(1);
   }
 
@@ -31,10 +32,12 @@ async function main() {
   const scanDate = new Date().toISOString();
 
   log('🔎 SEO audit started for:', mainUrl);
+  log('🚀 SEO Mode:', mode);
 
   console.time('SEO Audit');
-  const report = await runSeoAudit({ mainUrl });
+  const report = await runSeoAudit({ mainUrl, mode });
   console.timeEnd('SEO Audit');
+
 
   log('🎉 SEO audit finished. Writing reports...');
 
