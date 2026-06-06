@@ -14,9 +14,15 @@ if (fs.existsSync(REPORT_FILE)) {
 }
 
 const folders = fs.readdirSync(SCREENSHOT_DIR)
-  .filter(f =>
-    fs.statSync(path.join(SCREENSHOT_DIR, f)).isDirectory()
+  .filter(item =>
+    fs.statSync(
+      path.join(SCREENSHOT_DIR, item)
+    ).isDirectory()
   );
+console.log("ALL ITEMS:",
+  fs.readdirSync(SCREENSHOT_DIR));
+console.log("DIRECTORIES ONLY:",
+  folders);
 const latestFolder = folders
   .map(f => ({
     name: f,
@@ -627,10 +633,12 @@ const outputName = process.env.SITEMAP_OUTPUT_HTML === '1'
   ? 'reportsitemap.html'
   : 'qa-report.html';
 
+
 fs.writeFileSync(outputName, html);
 
 console.log(`✅ QA report generated: ${outputName}`);
 
 const { exec } = require('child_process');
+
 
 exec(`start qa-report.html`); // Windows
