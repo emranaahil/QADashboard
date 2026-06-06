@@ -13,7 +13,10 @@ if (fs.existsSync(REPORT_FILE)) {
   qaData = JSON.parse(fs.readFileSync(REPORT_FILE));
 }
 
-const folders = fs.readdirSync(SCREENSHOT_DIR);
+const folders = fs.readdirSync(SCREENSHOT_DIR)
+  .filter(f =>
+    fs.statSync(path.join(SCREENSHOT_DIR, f)).isDirectory()
+  );
 const latestFolder = folders
   .map(f => ({
     name: f,
